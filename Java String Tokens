@@ -5,13 +5,16 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
-        
-        String[] words = s.split("[!,?.*_'@\\ ]+");
-        int count = words.length;
-        System.out.println(count);
-        for(String word : words){
-            System.out.println(word);
+        if (s.trim().isEmpty()) 
+        {
+			System.out.println(0);
+        }
+        else{
+        String[] split = (s.replaceAll("^\\W+", "").split("[\\s!,?._'@]+"));
+        System.out.println(split.length);
+        for (String str : split) {
+        	System.out.println(str);
         }
       }
-    
+    }
 }
