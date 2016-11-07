@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        BigInteger a, b, s, m;
+        Scanner scan = new Scanner (System.in);
+        a = scan.nextBigInteger();
+        b = scan.nextBigInteger();
+        s = a.add(b);
+        System.out.println(s);
+        m = a.multiply(b);
+        System.out.println(m);
+        
+    }
+}
