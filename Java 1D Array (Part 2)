@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+    public class Solution {
+
+
+        private static boolean calculation(int m, int[] array, int position) {
+
+        try {
+            if ((position < 0) ||(array[position] == 1) )
+                return false;
+        }catch (ArrayIndexOutOfBoundsException | StackOverflowError e) {
+            return true;
+        }
+
+        array[position] = 1;
+        return calculation(m, array, position + 1)|| calculation(m, array, position + m)|| calculation(m, array, position - 1);
+        }
+
+        public static void main(String[] args){
+
+            Scanner input = new Scanner(System.in);
+            int t = input.nextInt();
+
+            int position = 0;
+
+            for (int i = 0; i < t; i++) {
+                int n = input.nextInt();
+                int m = input.nextInt();
+                int[] array= new int[n];
+                for (int z = 0; z < n; z++) {
+                    array[z] = input.nextInt();
+                }
+                
+                System.out.println(calculation(m, array, position) ? "YES" :  "NO");
+            }
+        }
+}
